@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PetsModule } from './pets/pets.module';
+import { UsuariosModule } from './usuarios/usuarios.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { PetsModule } from './pets/pets.module';
       synchronize: true,
     }),
     PetsModule,
+    UsuariosModule,
   ],
   controllers: [AppController],
   providers: [AppService],
