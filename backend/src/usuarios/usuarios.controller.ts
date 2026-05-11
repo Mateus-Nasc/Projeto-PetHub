@@ -6,9 +6,11 @@ import {
   Param,
   Delete,
   ParseIntPipe,
+  Patch,
 } from '@nestjs/common';
 import { UsuariosService } from './usuarios.service';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
+import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 
 @Controller('usuarios') // a rota é /usuarios
 export class UsuariosController {
@@ -33,6 +35,15 @@ export class UsuariosController {
   async findOne(@Param('id', ParseIntPipe) id: number) {
     console.log(`[GET /usuarios/${id}] Buscando dados do usuário`);
     return this.usuariosService.findOne(id);
+  }
+
+  @Patch(':id')
+  update(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() updateUsuarioDto: UpdateUsuarioDto,
+  ) {
+    console.log(`[PATCH /usuarios/${id}] Atualizando usuário`);
+    return this.usuariosService.update(id, updateUsuarioDto);
   }
 
   @Delete(':id')
