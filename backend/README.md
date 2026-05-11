@@ -1,6 +1,6 @@
 # PetHub API
 
-O PetHub é uma API RESTful desenvolvida para gerenciar o cadastro de pets e doadores, facilitando o processo de adoção. Construído com foco em boas práticas de programação, arquitetura escalável e segurança de dados.
+O PetHub é uma API RESTful desenvolvida para gerenciar o cadastro de pets e doadores, facilitando o processo de adoção.
 
 ## Tecnologias Utilizadas
 
