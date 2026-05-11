@@ -13,7 +13,7 @@ O PetHub é uma API RESTful desenvolvida para gerenciar o cadastro de pets e doa
 ## Funcionalidades
 
 - CRUD Completo: Criação, leitura, atualização e remoção de Usuários e Pets.
-- Relacionamento 1:N: Um doador pode ter múltiplos pets cadastrados sob sua responsabilidade, garantindo a Integridade Referencial no banco de dados.
+- Relacionamento 1:N: Um doador pode ter múltiplos pets cadastrados. Foi implementada a estratégia de Cascade Delete que remove automaticamente todos os pets vinculados ao usuario(doador) que foi excluido do sistema, garantindo a Integridade Referencial no banco de dados.
 - Validação Inteligente: Uso de DTOs e `@nestjs/mapped-types` (`PartialType`) para validar dados tanto na criação (POST) quanto na atualização parcial (PATCH).
 - Segurança (Serialização): Implementação de Interceptores Globais (`ClassSerializerInterceptor`) para garantir que dados sensíveis, como **senhas de usuários**, nunca sejam expostos nas respostas da API.
 
