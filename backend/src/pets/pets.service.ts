@@ -3,6 +3,7 @@ import { CreatePetDto } from './dto/create-pet.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Pet } from './pet.entity';
 import { Repository } from 'typeorm';
+import { UpdatePetDto } from './dto/update-pet.dto';
 
 @Injectable()
 export class PetsService {
@@ -35,7 +36,7 @@ export class PetsService {
 
   async findAll() {
     //relations: ['doador'] avisa o orm para não trazer só o pet,
-    // mas também os dados do dono que está doando
+    //mas também os dados do dono que está doando
     return await this.petRepository.find({
       relations: ['doador'],
     });
@@ -54,10 +55,17 @@ export class PetsService {
     return pet;
   }
 
-  /*
   async update(id: number, updatePetDto: UpdatePetDto) {
+    //preload procura o pet pelo id
+    const pet = await this.petRepository.preload({
+      id: id,
+      ...updatePetDto,
+    });
+
+    if (!pet) throw new NotFoundException('Pet não encontrado');
+
+    return this.petRepository.save(pet);
   }
-  */
 
   async remove(id: number) {
     const pet = await this.petRepository.findOneBy({ id });
@@ -66,7 +74,7 @@ export class PetsService {
       this.throwNotFoundError();
     }
 
-    // aqui deleta o pet do banco de dados e retorna o objeto removido
+    //aqui deleta o pet do banco de dados e retorna o objeto removido
     return this.petRepository.remove(pet!);
   }
 }

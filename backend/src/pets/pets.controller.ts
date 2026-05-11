@@ -3,14 +3,14 @@ import {
   Get,
   Post,
   Body,
-  // Patch,
+  Patch,
   Param,
   Delete,
   ParseIntPipe,
 } from '@nestjs/common';
 import { PetsService } from './pets.service';
 import { CreatePetDto } from './dto/create-pet.dto';
-// import { UpdatePetDto } from './dto/update-pet.dto';
+import { UpdatePetDto } from './dto/update-pet.dto';
 
 @Controller('pets')
 export class PetsController {
@@ -36,13 +36,15 @@ export class PetsController {
     console.log(`[GET /pets/${id}] Buscando dados de um pet específico`);
     return this.petsService.findOne(id);
   }
-  /*
+
   @Patch(':id')
-  update(@Param('id', ParseIntPipe) id: number, @Body() updatePetDto: UpdatePetDto) {
+  update(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() updatePetDto: UpdatePetDto,
+  ) {
     console.log(`[PATCH /pets/${id}] Atualizando pet`);
     return this.petsService.update(id, updatePetDto);
   }
-  */
 
   @Delete(':id')
   remove(@Param('id', ParseIntPipe) id: number) {

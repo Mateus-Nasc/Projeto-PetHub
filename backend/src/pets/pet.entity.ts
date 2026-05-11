@@ -7,7 +7,7 @@ export class Pet {
   id: number;
 
   @Column()
-  idade: string; // Ex: "2 meses" ou "3 anos"
+  idade: number;
 
   @Column()
   cor: string;
@@ -20,7 +20,7 @@ export class Pet {
 
   // O onDelete: 'CASCADE' apaga os pets se o usuário for deletado
   // garantindo assim a integridade referencial.
-  // O nullable: false garante que um pet sempre tenha um doador associado
+  // O nullable: false; garante que um pet sempre tenha um doador associado
   @ManyToOne(() => Usuario, (usuario) => usuario.pets, {
     nullable: false,
     onDelete: 'CASCADE',
