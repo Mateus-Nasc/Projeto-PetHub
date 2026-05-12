@@ -29,9 +29,16 @@ Para rodar este projeto localmente, configure as variaveis de ambiente.
 - [PostgreSQL](https://www.postgresql.org/) rodando localmente (ou via Docker).
 - Configurar as credenciais do banco de dados. Para isso siga como exemplo o modelo .env.exemplo
 
-1. Instale as dependencias: npm install
+1. Clone o repositório:
 
-2. Crie um arquivo .env na raiz do projeto assim:
+   ```bash
+   git clone [https://github.com/Mateus-Nasc/Projeto-PetHub.git](https://github.com/Mateus-Nasc/Projeto-PetHub.git)
+
+   ```
+
+2. entre na pasta e Instale as dependencias: cd backend ->  npm install
+
+3. Crie um arquivo .env na raiz do projeto assim:
 
    ```bash
    DB_TYPE=postgres
@@ -44,20 +51,13 @@ Para rodar este projeto localmente, configure as variaveis de ambiente.
 
 ### Passo a passo
 
-1. Clone o repositório:
-
-   ```bash
-   git clone [https://github.com/Mateus-Nasc/Projeto-PetHub.git](https://github.com/Mateus-Nasc/Projeto-PetHub.git)
-
-   ```
-
-2. entre na pasta
+1. entre na pasta
 
    ```bash
    cd backend
    ```
 
-3. Agora para o nest gerenciar as variaveis de ambiente do seu .env execute o
+2. Agora para o nest gerenciar as variaveis de ambiente do seu .env execute o
    comando:
 
 ```bash
