@@ -56,9 +56,7 @@ Para rodar este projeto localmente, configure as variaveis de ambiente.
    DB_DATABASE=nome_do_banco
    ```
 
-### Passo a passo
-
-Na pasta backend
+### Passo Final
 
 Agora para o nest gerenciar as variaveis de ambiente do seu .env execute o
    comando:
