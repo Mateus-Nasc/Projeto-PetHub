@@ -36,9 +36,16 @@ Para rodar este projeto localmente, configure as variaveis de ambiente.
 
    ```
 
-2. entre na pasta e Instale as dependencias: cd backend ->  npm install
+2. entre na pasta e Instale as dependencias:
 
-3. Crie um arquivo .env na raiz do projeto assim:
+   ```bash
+      cd backend
+   ```
+   ```bash
+      npm install
+   ```
+
+3. Crie um arquivo .env na raiz do projeto (no caso na pasta backend):
 
    ```bash
    DB_TYPE=postgres
@@ -49,15 +56,9 @@ Para rodar este projeto localmente, configure as variaveis de ambiente.
    DB_DATABASE=nome_do_banco
    ```
 
-### Passo a passo
+### Passo Final
 
-1. entre na pasta
-
-   ```bash
-   cd backend
-   ```
-
-2. Agora para o nest gerenciar as variaveis de ambiente do seu .env execute o
+Agora para o nest gerenciar as variaveis de ambiente do seu .env execute o
    comando:
 
 ```bash
