@@ -6,17 +6,29 @@ export class Pet {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  idade: number;
+  @Column({
+    type: 'enum',
+    enum: ['Cachorro', 'Gato'],
+  })
+  especie: string;
 
-  @Column()
-  cor: string;
-
-  @Column()
+  @Column({ type: 'varchar', length: 30 })
   raca: string;
 
-  @Column()
+  @Column({ type: 'varchar', length: 30 })
+  cor: string;
+
+  @Column({ type: 'int' })
+  idade: number;
+
+  @Column({
+    type: 'enum',
+    enum: ['Macho', 'Fêmea'],
+  })
   sexo: string;
+
+  @Column({ default: false })
+  adotado: boolean;
 
   // O onDelete: 'CASCADE' apaga os pets se o usuário for deletado
   // garantindo assim a integridade referencial.

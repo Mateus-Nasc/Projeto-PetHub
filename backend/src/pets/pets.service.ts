@@ -21,9 +21,10 @@ export class PetsService {
     // Aqui é o objeto que o typeorm vai salvar.
     //a linha do "doador" cria o relacionamento usando o id enviado do front
     const dadosPet = {
-      idade: createPetDto.idade,
-      cor: createPetDto.cor,
+      especie: createPetDto.especie,
       raca: createPetDto.raca,
+      cor: createPetDto.cor,
+      idade: createPetDto.idade,
       sexo: createPetDto.sexo,
       doador: { id: createPetDto.doadorId }, //1:N
     };
